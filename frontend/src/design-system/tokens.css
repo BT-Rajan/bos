@@ -1,0 +1,94 @@
+/* Design Tokens — BOS Design System
+   See DESIGN-PLAN.md for the rationale behind every choice here. */
+
+:root {
+  /* Color — base surfaces */
+  --color-ink: #1c2430;
+  --color-ink-soft: #4b5563;
+  --color-bg: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-line: #e2e5ea;
+  --color-line-strong: #cbd2db;
+
+  /* Color — accent */
+  --color-accent: #0f6e6e;
+  --color-accent-hover: #0c5959;
+  --color-accent-soft: #e4f1f1;
+  --color-focus-ring: #0f6e6e66;
+
+  /* Color — status (the Due Rail scale) */
+  --status-not-started: #94a3b8;
+  --status-in-progress: #2563eb;
+  --status-due-today: #d97706;
+  --status-overdue: #dc2626;
+  --status-escalated: #7f1d1d;
+  --status-completed: #15803d;
+
+  /* Color — semantic */
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-danger-soft: #fdecec;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Elevation — deliberately subtle; surfaces stay quiet */
+  --shadow-sm: 0 1px 2px rgba(28, 36, 48, 0.06);
+  --shadow-md: 0 4px 12px rgba(28, 36, 48, 0.08);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+
+  /* Due Rail width — the signature element */
+  --rail-width: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}
+
+/* Utility: status color lookup as classes, used by StatusBadge and the Due Rail */
+.status-not_started { --status-color: var(--status-not-started); }
+.status-in_progress { --status-color: var(--status-in-progress); }
+.status-due_today   { --status-color: var(--status-due-today); }
+.status-overdue     { --status-color: var(--status-overdue); }
+.status-escalated   { --status-color: var(--status-escalated); }
+.status-completed   { --status-color: var(--status-completed); }
